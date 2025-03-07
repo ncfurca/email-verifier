@@ -1,0 +1,18 @@
+input_file: "leads.csv" # Default input file name
+input_type: "csv"      # Default input type (csv or xlsx)
+output_file: "verified_leads.xlsx" # Default output file name
+output_type: "xlsx"     # Default output type (csv or xlsx)
+
+valid_threshold: 75
+risky_threshold: 40
+default_risky_score: 40
+max_retries: 1 # Number of additional attempts to reach a server when given a timeout error
+initial_backoff: 1s
+num_workers: 10 # Increased default workers for better performance
+scoring_weights:
+  has_mx_records: 30
+  reachable_yes: 50
+  reachable_unknown: -20
+  role_account: -15
+  free_provider: -10
+  suggestion: -25
